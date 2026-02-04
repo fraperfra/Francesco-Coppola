@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useState } from 'react';
+import React, { useCallback, useEffect, useMemo, useState } from 'react';
 import { Navbar } from './components/Navbar';
 import { Footer } from './components/Footer';
 import { HomePage } from './pages/HomePage';
@@ -330,14 +330,44 @@ function App() {
     return () => window.removeEventListener('popstate', handlePopState);
   }, []);
 
-  const navigate = (to: string) => {
+  const navigate = useCallback((to: string) => {
     if (to === currentPath) {
       return;
     }
     window.history.pushState({}, '', to);
     setCurrentPath(to);
     window.scrollTo({ top: 0, behavior: 'smooth' });
-  };
+  }, [currentPath]);
+
+  useEffect(() => {
+    const handleLinkClick = (event: MouseEvent) => {
+      const target = event.target as HTMLElement | null;
+      const link = target?.closest('a') as HTMLAnchorElement | null;
+      if (!link) {
+        return;
+      }
+      if (link.target && link.target !== '_self') {
+        return;
+      }
+      if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) {
+        return;
+      }
+      const href = link.getAttribute('href');
+      if (!href || href.startsWith('http') || href.startsWith('mailto:') || href.startsWith('tel:')) {
+        return;
+      }
+      if (href.startsWith('#')) {
+        return;
+      }
+      if (!href.startsWith('/')) {
+        return;
+      }
+      event.preventDefault();
+      navigate(href);
+    };
+    document.addEventListener('click', handleLinkClick);
+    return () => document.removeEventListener('click', handleLinkClick);
+  }, [navigate]);
 
   const activeRoute = routes.find((route) => route.path === currentPath);
   const page = activeRoute?.component ?? <NotFoundPage />;

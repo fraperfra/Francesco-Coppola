@@ -24,10 +24,10 @@ export const Footer: React.FC<FooterProps> = ({ routes, currentPath, onNavigate 
           <div className="md:col-span-1">
             <div className="flex items-center gap-2 text-white font-bold text-xl mb-6">
                 <Shield className="text-brand-500" />
-                <span>ConsulenteIndipendente</span>
+                <span>Francesco Coppola</span>
             </div>
             <p className="text-sm leading-relaxed mb-6">
-              Affianco chi acquista casa da privati offrendo competenza tecnica, giuridica e negoziale. Senza conflitti di interesse.
+              Consulente immobiliare indipendente a Reggio Emilia e provincia. Ti affianco in ogni fase della compravendita con competenza tecnica, giuridica e negoziale. Disponibile in tutta l'Emilia.
             </p>
           </div>
 
@@ -73,18 +73,18 @@ export const Footer: React.FC<FooterProps> = ({ routes, currentPath, onNavigate 
               </li>
               <li className="flex items-center gap-3">
                 <Phone size={16} className="text-brand-500" />
-                <span>+39 02 123 4567</span>
+                <span>+39 0522 123456</span>
               </li>
               <li className="flex items-center gap-3">
                 <MapPin size={16} className="text-brand-500" />
-                <span>Milano, Via Roma 10</span>
+                <span>Reggio Emilia, Via Emilia San Pietro</span>
               </li>
             </ul>
           </div>
         </div>
 
         <div className="pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-slate-500">
-          <p>&copy; 2024 Consulente Immobiliare Indipendente. Tutti i diritti riservati.</p>
+          <p>&copy; 2025 Francesco Coppola - Consulente Immobiliare Indipendente. P.IVA 00000000000</p>
           <div className="flex gap-6 mt-4 md:mt-0">
             <a href="#" className="hover:text-white">Privacy Policy</a>
             <a href="#" className="hover:text-white">Cookie Policy</a>

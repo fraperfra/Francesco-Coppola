@@ -255,9 +255,9 @@ const ValuationStepsSection: React.FC = () => {
             __html: JSON.stringify({
               '@context': 'https://schema.org',
               '@type': 'RealEstateAgent',
-              name: 'Consulente Immobiliare Indipendente',
+              name: 'Francesco Coppola - Consulente Immobiliare Indipendente',
               serviceType: 'Valutazione immobiliare',
-              areaServed: 'Italia'
+              areaServed: ['Reggio Emilia', 'Emilia-Romagna']
             })
           }}
         />
@@ -625,11 +625,11 @@ const createServicePage = (service: ServiceDetail) => {
     }, [service.slug]);
 
     return (
-      <div className="pt-20 animate-fade-in">
+      <div className="animate-fade-in">
         <style>
           {`.reveal-step{opacity:0;transform:translateY(24px);transition:all .6s ease} .reveal-step.reveal-visible{opacity:1;transform:translateY(0)}`}
         </style>
-        <section className="bg-brand-900 text-white py-20">
+        <section className="bg-brand-900 text-white pt-32 pb-20">
           <div className="container mx-auto px-4">
             <nav className="text-sm text-brand-100 mb-6" aria-label="Breadcrumb">
               <ol className="flex flex-wrap items-center gap-2">

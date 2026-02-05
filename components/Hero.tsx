@@ -5,8 +5,8 @@ import { Button } from './Button';
 export const Hero: React.FC = () => {
   const highlights = ['Nessuna provvigione', 'Nessuna agenzia', 'Solo il tuo interesse'];
   const actions = [
-    { label: 'Prenota una consulenza di acquisto', variant: 'primary' as const, href: '/contatti' },
-    { label: 'Scopri come funziona', variant: 'outline' as const, icon: ArrowRight, href: '/consulenza-acquisto' }
+    { label: 'Prenota una consulenza gratuita', variant: 'primary' as const, href: '/contatti' },
+    { label: 'Scopri i servizi', variant: 'outline' as const, icon: ArrowRight, href: '/consulenza-acquisto' }
   ];
 
   return (
@@ -14,7 +14,7 @@ export const Hero: React.FC = () => {
       <div className="absolute inset-0 z-0">
         <img
           src="https://picsum.photos/id/48/1920/1080"
-          alt="Consulente immobiliare"
+          alt="Consulente immobiliare a Reggio Emilia"
           className="w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-slate-900/90 to-slate-800/75"></div>
@@ -24,15 +24,15 @@ export const Hero: React.FC = () => {
         <div className="max-w-4xl mx-auto text-center text-white">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-600/30 border border-brand-400/50 mb-6 backdrop-blur-md">
             <ShieldCheck size={16} className="text-brand-200" />
-            <span className="text-sm font-medium text-brand-50 tracking-wide">Tutela al 100% dell'acquirente</span>
+            <span className="text-sm font-medium text-brand-50 tracking-wide">A Reggio Emilia e in tutta l'Emilia</span>
           </div>
 
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
-            Vuoi comprare casa in sicurezza <span className="text-brand-400">da un privato?</span>
+            Compra o vendi casa <span className="text-brand-400">senza rischi</span>
           </h1>
 
           <p className="text-xl md:text-2xl text-slate-200 mb-10 leading-relaxed font-light">
-            Ti affianco come <span className="font-semibold text-white">consulente immobiliare indipendente</span> per evitare errori legali, economici e di trattativa.
+            Sono Francesco Coppola, <span className="font-semibold text-white">consulente immobiliare indipendente</span> a Reggio Emilia. Ti tutelo in ogni fase della compravendita, senza conflitti di interesse.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">

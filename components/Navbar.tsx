@@ -43,7 +43,7 @@ export const Navbar: React.FC<NavbarProps> = ({ routes, currentPath, onNavigate 
         >
           <Shield className={`${isScrolled ? 'text-brand-600' : 'text-white'}`} fill="currentColor" fillOpacity={0.2} />
           <span className={`${isScrolled ? 'text-slate-900' : 'text-white'}`}>
-            Consulente<span className={`${isScrolled ? 'text-brand-600' : 'text-brand-300'}`}>Indipendente</span>
+            Francesco<span className={`${isScrolled ? 'text-brand-600' : 'text-brand-300'}`}>Coppola</span>
           </span>
         </button>
 
@@ -72,7 +72,7 @@ export const Navbar: React.FC<NavbarProps> = ({ routes, currentPath, onNavigate 
             className="text-sm px-5 py-2"
             onClick={() => handleNavigate('/contatti')}
           >
-            Prenota Consulenza
+            Consulenza Gratuita
           </Button>
         </div>
 
@@ -111,7 +111,7 @@ export const Navbar: React.FC<NavbarProps> = ({ routes, currentPath, onNavigate 
             );
           })}
           <Button variant="primary" fullWidth onClick={() => handleNavigate('/contatti')}>
-            Prenota Consulenza
+            Consulenza Gratuita
           </Button>
         </div>
       )}

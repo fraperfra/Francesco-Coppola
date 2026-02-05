@@ -50,12 +50,12 @@ export const ContactPage: React.FC = () => {
   };
 
   return (
-    <div className="pt-20 animate-fade-in">
-      <section className="bg-brand-900 text-white py-20">
+    <div className="animate-fade-in">
+      <section className="bg-brand-900 text-white pt-32 pb-20">
         <div className="container mx-auto px-4 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">Contatti</h1>
+          <h1 className="text-4xl md:text-5xl font-bold mb-4">Contattami</h1>
           <p className="text-xl text-brand-100 max-w-3xl mx-auto">
-            Richiedi una consulenza o condividi il tuo progetto: rispondiamo entro 24 ore lavorative.
+            Stai cercando casa a Reggio Emilia o vuoi vendere il tuo immobile? Raccontami il tuo progetto: ti rispondo entro 24 ore.
           </p>
         </div>
       </section>
@@ -138,21 +138,23 @@ export const ContactPage: React.FC = () => {
 
             <div className="space-y-6">
               <div className="bg-white border border-slate-100 rounded-2xl p-6 shadow-sm">
-                <h3 className="text-lg font-bold text-slate-900 mb-2">Ufficio</h3>
-                <p className="text-slate-600">Milano, Via Roma 10</p>
+                <h3 className="text-lg font-bold text-slate-900 mb-2">Dove opero</h3>
+                <p className="text-slate-600">Reggio Emilia e provincia</p>
+                <p className="text-slate-500 text-sm mt-1">Disponibile in tutta l'Emilia-Romagna</p>
               </div>
               <div className="bg-white border border-slate-100 rounded-2xl p-6 shadow-sm">
                 <h3 className="text-lg font-bold text-slate-900 mb-2">Email</h3>
-                <p className="text-slate-600">info@consulenteindipendente.it</p>
+                <a href="mailto:info@consulenteindipendente.it" className="text-brand-600 hover:text-brand-800 transition-colors">info@consulenteindipendente.it</a>
               </div>
               <div className="bg-white border border-slate-100 rounded-2xl p-6 shadow-sm">
                 <h3 className="text-lg font-bold text-slate-900 mb-2">Telefono</h3>
-                <p className="text-slate-600">+39 02 123 4567</p>
+                <a href="tel:+390522123456" className="text-brand-600 hover:text-brand-800 transition-colors">+39 0522 123456</a>
               </div>
               <div className="bg-slate-900 text-white rounded-2xl p-6">
-                <h3 className="text-lg font-bold mb-2">Orari</h3>
+                <h3 className="text-lg font-bold mb-2">Disponibilità</h3>
                 <p className="text-slate-200">Lun - Ven: 9:00 - 19:00</p>
                 <p className="text-slate-200">Sab: 9:30 - 13:00</p>
+                <p className="text-slate-400 text-sm mt-2">Sopralluoghi anche fuori orario su appuntamento</p>
               </div>
             </div>
           </div>

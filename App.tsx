@@ -8,6 +8,7 @@ import { ProjectsPage } from './pages/ProjectsPage';
 import { AboutPage } from './pages/AboutPage';
 import { BlogPage } from './pages/BlogPage';
 import { ContactPage } from './pages/ContactPage';
+import { PackageBuilderPage } from './pages/PackageBuilderPage';
 import {
   BuyingDocumentsPage,
   BuyingMarketValuePage,
@@ -52,29 +53,45 @@ function App() {
       {
         path: '/',
         label: 'Home',
-        title: 'Consulente Immobiliare Indipendente',
-        description: 'Consulenza indipendente per acquistare o vendere casa con sicurezza.',
+        title: 'Consulente Immobiliare Indipendente Reggio Emilia | Francesco Coppola',
+        description: 'Consulente immobiliare indipendente a Reggio Emilia e provincia. Ti affianco nell\'acquisto o vendita casa senza conflitti di interesse. Disponibile in tutta l\'Emilia.',
         component: <HomePage />,
         schema: {
           '@context': 'https://schema.org',
-          '@type': 'Organization',
-          name: 'Consulente Immobiliare Indipendente',
-          url: window.location.origin
+          '@type': 'LocalBusiness',
+          name: 'Francesco Coppola - Consulente Immobiliare Indipendente',
+          url: window.location.origin,
+          areaServed: ['Reggio Emilia', 'Emilia-Romagna']
         }
       },
       {
         path: '/consulenza-acquisto',
         label: 'Consulenza Acquisto',
-        title: 'Consulenza Acquisto | Consulente Indipendente',
-        description: 'Supporto completo per acquistare casa da privati senza rischi.',
+        title: 'Consulenza Acquisto Casa Reggio Emilia | Supporto Completo',
+        description: 'Cerchi casa a Reggio Emilia? Ti assisto nell\'acquisto da privato: verifiche documenti, valutazione prezzo, trattativa e rogito. Nessun conflitto di interesse.',
         component: <BuyingPage />,
         schema: {
           '@context': 'https://schema.org',
           '@type': 'Service',
-          name: 'Consulenza Acquisto',
+          name: 'Consulenza Acquisto Immobiliare',
           serviceType: 'Consulenza immobiliare per acquisto',
-          areaServed: 'Italia'
+          areaServed: ['Reggio Emilia', 'Emilia-Romagna']
         }
+      },
+      {
+        path: '/crea-pacchetto',
+        label: 'Crea il tuo pacchetto',
+        title: 'Crea il tuo pacchetto | Consulente Indipendente',
+        description: 'Configura un pacchetto personalizzato di servizi immobiliari.',
+        component: <PackageBuilderPage />,
+        schema: {
+          '@context': 'https://schema.org',
+          '@type': 'Service',
+          name: 'Configuratore pacchetti personalizzati',
+          serviceType: 'Configurazione pacchetto servizi immobiliari',
+          areaServed: ['Reggio Emilia', 'Emilia-Romagna']
+        },
+        showInNav: false
       },
       {
         path: '/consulenza-acquisto/verifiche-documenti',
@@ -87,7 +104,7 @@ function App() {
           '@type': 'Service',
           name: "Verifiche documenti dell'immobile",
           serviceType: 'Consulenza tecnica e documentale per acquisto',
-          areaServed: 'Italia'
+          areaServed: ['Reggio Emilia', 'Emilia-Romagna']
         },
         showInNav: false
       },
@@ -102,7 +119,7 @@ function App() {
           '@type': 'Service',
           name: 'Valutazione del prezzo di mercato',
           serviceType: 'Valutazione immobiliare indipendente',
-          areaServed: 'Italia'
+          areaServed: ['Reggio Emilia', 'Emilia-Romagna']
         },
         showInNav: false
       },
@@ -117,7 +134,7 @@ function App() {
           '@type': 'Service',
           name: 'Supporto nella trattativa e formulazione offerta',
           serviceType: "Supporto negoziale per l'acquisto",
-          areaServed: 'Italia'
+          areaServed: ['Reggio Emilia', 'Emilia-Romagna']
         },
         showInNav: false
       },
@@ -132,7 +149,7 @@ function App() {
           '@type': 'Service',
           name: 'Stesura del contratto preliminare',
           serviceType: 'Supporto contrattuale per acquisto',
-          areaServed: 'Italia'
+          areaServed: ['Reggio Emilia', 'Emilia-Romagna']
         },
         showInNav: false
       },
@@ -147,7 +164,7 @@ function App() {
           '@type': 'Service',
           name: 'Visure ipotecarie e controlli legali',
           serviceType: 'Controlli legali per acquisto',
-          areaServed: 'Italia'
+          areaServed: ['Reggio Emilia', 'Emilia-Romagna']
         },
         showInNav: false
       },
@@ -162,22 +179,22 @@ function App() {
           '@type': 'Service',
           name: 'Accompagnamento al rogito',
           serviceType: 'Assistenza al rogito notarile',
-          areaServed: 'Italia'
+          areaServed: ['Reggio Emilia', 'Emilia-Romagna']
         },
         showInNav: false
       },
       {
         path: '/consulenza-vendita',
         label: 'Consulenza Vendita',
-        title: 'Consulenza Vendita | Consulente Indipendente',
-        description: 'Vendita strategica con analisi di mercato e marketing mirato.',
+        title: 'Vendere Casa a Reggio Emilia | Consulenza Vendita Immobiliare',
+        description: 'Vuoi vendere casa a Reggio Emilia? Valutazione di mercato, foto professionali, marketing e assistenza fino al rogito. Massimizza il valore del tuo immobile.',
         component: <SellingPage />,
         schema: {
           '@context': 'https://schema.org',
           '@type': 'Service',
-          name: 'Consulenza Vendita',
+          name: 'Consulenza Vendita Immobiliare',
           serviceType: 'Consulenza immobiliare per vendita',
-          areaServed: 'Italia'
+          areaServed: ['Reggio Emilia', 'Emilia-Romagna']
         }
       },
       {
@@ -191,7 +208,7 @@ function App() {
           '@type': 'Service',
           name: 'Report Valutazione Immobile',
           serviceType: 'Valutazione immobiliare per vendita',
-          areaServed: 'Italia'
+          areaServed: ['Reggio Emilia', 'Emilia-Romagna']
         },
         showInNav: false
       },
@@ -206,7 +223,7 @@ function App() {
           '@type': 'Service',
           name: 'Fascicolo tecnico CASA OK',
           serviceType: 'Verifica tecnica per vendita',
-          areaServed: 'Italia'
+          areaServed: ['Reggio Emilia', 'Emilia-Romagna']
         },
         showInNav: false
       },
@@ -221,7 +238,7 @@ function App() {
           '@type': 'Service',
           name: 'Servizio Foto, Video & AI',
           serviceType: 'Servizi media per vendita immobiliare',
-          areaServed: 'Italia'
+          areaServed: ['Reggio Emilia', 'Emilia-Romagna']
         },
         showInNav: false
       },
@@ -236,7 +253,7 @@ function App() {
           '@type': 'Service',
           name: 'Pubblicità & Marketing',
           serviceType: 'Marketing immobiliare per vendita',
-          areaServed: 'Italia'
+          areaServed: ['Reggio Emilia', 'Emilia-Romagna']
         },
         showInNav: false
       },
@@ -251,7 +268,7 @@ function App() {
           '@type': 'Service',
           name: 'Prequalifica acquirenti',
           serviceType: 'Selezione acquirenti per vendita',
-          areaServed: 'Italia'
+          areaServed: ['Reggio Emilia', 'Emilia-Romagna']
         },
         showInNav: false
       },
@@ -266,15 +283,15 @@ function App() {
           '@type': 'Service',
           name: 'Trattative & Contrattualistica',
           serviceType: 'Supporto contrattuale per vendita',
-          areaServed: 'Italia'
+          areaServed: ['Reggio Emilia', 'Emilia-Romagna']
         },
         showInNav: false
       },
       {
         path: '/progetti',
         label: 'Progetti',
-        title: 'Progetti | Consulente Indipendente',
-        description: 'Casi reali di acquisto, vendita e investimento immobiliare.',
+        title: 'Progetti e Case Study | Compravendite a Reggio Emilia',
+        description: 'Casi reali di acquisto e vendita immobiliare a Reggio Emilia e provincia. Scopri come ho aiutato i miei clienti a concludere la compravendita in sicurezza.',
         component: <ProjectsPage />,
         schema: {
           '@context': 'https://schema.org',
@@ -285,32 +302,32 @@ function App() {
       {
         path: '/chi-siamo',
         label: 'Chi Siamo',
-        title: 'Chi Siamo | Consulente Indipendente',
-        description: 'Team indipendente con competenze tecniche, legali e strategiche.',
+        title: 'Chi Sono | Francesco Coppola Consulente Immobiliare Reggio Emilia',
+        description: 'Sono Francesco Coppola, consulente immobiliare indipendente a Reggio Emilia. Competenze tecniche, giuridiche e negoziali al servizio di chi compra o vende casa.',
         component: <AboutPage />,
         schema: {
           '@context': 'https://schema.org',
           '@type': 'AboutPage',
-          name: 'Chi Siamo'
+          name: 'Chi Sono'
         }
       },
       {
         path: '/blog',
         label: 'Blog',
-        title: 'Blog | Consulente Indipendente',
-        description: 'Guide, consigli e aggiornamenti sul mercato immobiliare.',
+        title: 'Blog Immobiliare Reggio Emilia | Guide e Consigli',
+        description: 'Guide, consigli e aggiornamenti sul mercato immobiliare di Reggio Emilia e provincia. Come comprare e vendere casa in sicurezza.',
         component: <BlogPage />,
         schema: {
           '@context': 'https://schema.org',
           '@type': 'Blog',
-          name: 'Blog'
+          name: 'Blog Immobiliare'
         }
       },
       {
         path: '/contatti',
         label: 'Contatti',
-        title: 'Contatti | Consulente Indipendente',
-        description: 'Richiedi una consulenza immobiliare personalizzata.',
+        title: 'Contatti | Consulente Immobiliare Reggio Emilia',
+        description: 'Contattami per una consulenza immobiliare a Reggio Emilia e provincia. Rispondo entro 24 ore. Disponibile in tutta l\'Emilia per sopralluoghi e assistenza.',
         component: <ContactPage />,
         schema: {
           '@context': 'https://schema.org',

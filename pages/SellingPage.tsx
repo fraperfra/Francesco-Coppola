@@ -3,6 +3,7 @@ import { SellingServices } from '../components/SellingServices';
 import { Testimonials } from '../components/Testimonials';
 import { CTAStrip } from '../components/CTAStrip';
 import { SectionHeading } from '../components/SectionHeading';
+import { Button } from '../components/Button';
 
 export const SellingPage: React.FC = () => {
   useEffect(() => {
@@ -42,8 +43,8 @@ export const SellingPage: React.FC = () => {
   ];
 
   return (
-    <div className="pt-20 animate-fade-in">
-      <section className="bg-brand-900 text-white py-20 relative overflow-hidden">
+    <div className="animate-fade-in">
+      <section className="bg-brand-900 text-white pt-32 pb-20 relative overflow-hidden">
         <div className="absolute inset-0 opacity-20 bg-[url('https://images.unsplash.com/photo-1505691938895-1758d7feb511?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80')] bg-cover bg-center"></div>
         <div className="container mx-auto px-4 relative z-10 text-center">
           <h1 className="text-4xl md:text-5xl font-bold mb-4">Consulenza Vendita Strategica</h1>
@@ -59,6 +60,9 @@ export const SellingPage: React.FC = () => {
             title="Un piano completo per valorizzare la tua casa"
             subtitle="Dalla valutazione alla firma, ti seguiamo con un metodo trasparente e misurabile."
           />
+          <div className="flex justify-center mb-10">
+            <Button href="/crea-pacchetto">Crea il tuo pacchetto</Button>
+          </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
             {benefits.map((item) => (
               <div key={item} className="flex items-start gap-4 p-6 bg-slate-50 rounded-2xl border border-slate-100 shadow-sm">

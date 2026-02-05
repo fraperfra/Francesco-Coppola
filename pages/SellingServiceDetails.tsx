@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { SectionHeading } from '../components/SectionHeading';
+import { BeforeAfter } from '../components/BeforeAfter';
 
 type GalleryItem = {
   webp: string;
@@ -19,6 +20,13 @@ type Testimonial = {
   quote: string;
 };
 
+type BeforeAfterItem = {
+  beforeImage: string;
+  afterImage: string;
+  beforeLabel?: string;
+  afterLabel?: string;
+};
+
 type ServiceDetail = {
   slug: string;
   title: string;
@@ -35,6 +43,7 @@ type ServiceDetail = {
   basePrice: number;
   packageDiscountPercent: number;
   addOns: Array<{ label: string; price: number }>;
+  beforeAfter?: BeforeAfterItem[];
 };
 
 const leadEndpoint = (import.meta as any).env?.VITE_LEAD_ENDPOINT || '';
@@ -279,8 +288,8 @@ const createServicePage = (service: ServiceDetail) => {
     }, []);
 
     return (
-      <div className="pt-20 animate-fade-in">
-        <section className="bg-brand-900 text-white py-20">
+      <div className="animate-fade-in">
+        <section className="bg-brand-900 text-white pt-32 pb-20">
           <div className="container mx-auto px-4">
             <nav className="text-sm text-brand-100 mb-6" aria-label="Breadcrumb">
               <ol className="flex flex-wrap items-center gap-2">
@@ -361,6 +370,26 @@ const createServicePage = (service: ServiceDetail) => {
             </div>
           </div>
         </section>
+
+        {service.beforeAfter && service.beforeAfter.length > 0 && (
+          <section className="py-16 bg-slate-50">
+            <div className="container mx-auto px-4">
+              <SectionHeading title="Prima e Dopo" subtitle="Guarda la trasformazione con il nostro servizio." />
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+                {service.beforeAfter.map((item, index) => (
+                  <BeforeAfter
+                    key={index}
+                    beforeImage={item.beforeImage}
+                    afterImage={item.afterImage}
+                    beforeLabel={item.beforeLabel}
+                    afterLabel={item.afterLabel}
+                    className="aspect-[4/3]"
+                  />
+                ))}
+              </div>
+            </div>
+          </section>
+        )}
 
         <section className="py-16 bg-slate-50">
           <div className="container mx-auto px-4">
@@ -602,6 +631,20 @@ const services: ServiceDetail[] = [
       { label: 'Virtual tour 3D', price: 160 },
       { label: 'Home staging virtuale', price: 130 },
       { label: 'Video reel social', price: 90 }
+    ],
+    beforeAfter: [
+      {
+        beforeImage: 'https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?auto=format&fit=crop&w=800&h=600&q=80',
+        afterImage: 'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=800&h=600&q=80',
+        beforeLabel: 'Prima',
+        afterLabel: 'Home Staging AI'
+      },
+      {
+        beforeImage: 'https://images.unsplash.com/photo-1523755231516-e43fd2e8dca5?auto=format&fit=crop&w=800&h=600&q=80',
+        afterImage: 'https://images.unsplash.com/photo-1616594039964-ae9021a400a0?auto=format&fit=crop&w=800&h=600&q=80',
+        beforeLabel: 'Originale',
+        afterLabel: 'Post-produzione'
+      }
     ]
   },
   {

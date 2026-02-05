@@ -5,6 +5,7 @@ import { Reassurance } from '../components/Reassurance';
 import { CTAStrip } from '../components/CTAStrip';
 import { Pricing } from '../components/Pricing';
 import { SectionHeading } from '../components/SectionHeading';
+import { Button } from '../components/Button';
 
 export const BuyingPage: React.FC = () => {
   useEffect(() => {
@@ -81,8 +82,8 @@ export const BuyingPage: React.FC = () => {
   };
 
   return (
-    <div className="pt-20 animate-fade-in">
-      <section className="bg-brand-900 text-white py-20 relative overflow-hidden">
+    <div className="animate-fade-in">
+      <section className="bg-brand-900 text-white pt-32 pb-20 relative overflow-hidden">
         <div className="absolute inset-0 opacity-20 bg-[url('https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80')] bg-cover bg-center"></div>
         <div className="container mx-auto px-4 relative z-10 text-center">
           <h1 className="text-4xl md:text-5xl font-bold mb-4">Consulenza Acquisto Sicuro</h1>
@@ -98,6 +99,9 @@ export const BuyingPage: React.FC = () => {
             title="Consulenza Acquisto"
             subtitle="Sei servizi dedicati per acquistare casa con sicurezza e metodo."
           />
+          <div className="flex justify-center mb-10">
+            <Button href="/crea-pacchetto">Crea il tuo pacchetto</Button>
+          </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {serviceCards.map((card) => (
               <a
